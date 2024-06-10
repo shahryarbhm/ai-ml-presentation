@@ -1,40 +1,117 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/moon.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="qrcode.js"></script>
+	<script type="text/javascript">
+		new QRCode(document.getElementById("qrcode"), "http://jindo.dev.naver.com/collie");
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h2>Personalized German Language Learning Platform</h2>
+				<h3>Mid-Term Project Review</h3>
+				<h3>Presentation Host QR Code</h3>
+				<div class="qrcode-container">
+					<div class="qrcode" id="qrcode"></div>
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Learning Task</h3>
+				<ul>
+					<li>Teach German to English speakers across proficiency levels</li>
+					<li>Conversational Chatbot for interactive practice</li>
+					<li>Grammar Assistant for explanations and feedback</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Preliminary Data Analysis</h3>
+				<ul>
+					<li>Conversational datasets from language learning resources</li>
+					<li>Grammar datasets from textbooks and expert explanations</li>
+					<li>Data annotated and categorized by proficiency levels</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Literature Overview</h3>
+				<ul>
+					<li>Conversational AI using sequence-to-sequence models</li>
+					<li>Grammatical error correction with neural networks</li>
+					<li>Adaptive learning and knowledge tracing techniques</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>ML Approach Implementation</h3>
+				<ul>
+					<li>Fine-tuned pre-trained language model for dialogue generation</li>
+					<li>Seq2seq model for grammar error correction and explanations</li>
+					<li>Bayesian knowledge tracing for user progress tracking</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Preliminary Results and Analysis</h3>
+				<ul>
+					<li>Chatbot generates contextually relevant responses</li>
+					<li>Grammar assistant provides accurate explanations and corrections</li>
+					<li>User progress tracking shows promise in adapting to proficiency levels</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Thank you!</h3>
+				<p>Questions?</p>
+			</section>
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+	<script type="text/javascript">
+		var qrcode = new QRCode(document.getElementById("qrcode"), {
+			width: 100,
+			height: 100
+		});
+		function makeCode() {
+			var currentUrl = window.location.origin + window.location.pathname;
+			qrcode.makeCode(currentUrl);
+		}
+		makeCode();
+	</script>
+</body>
+
 </html>

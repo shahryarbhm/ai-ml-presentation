@@ -260,6 +260,12 @@ section.has-light-background, section.has-light-background h1, section.has-light
   border-bottom: 1px solid;
 }
 
+.qrcode-container {
+    text-align: center;
+    width: 128px;
+    height: 128px;
+    margin:  0 auto;
+ }
 .reveal table th[align=center],
 .reveal table td[align=center] {
   text-align: center;
